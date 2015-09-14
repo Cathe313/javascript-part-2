@@ -56,15 +56,22 @@ function compareAlpha(a, b) {
 
 addressBook.sort(compareAlpha);
 
-//Here is a function that can be used with Array.prototype.map() to return the square root of a number.
+//Here is a function that can be used on an array of objects with Array.prototype.map() to return the square of the num property (with a test array).
 
-var arrayOfNumbers = [100, 4, 9, 36, 1, 64, 0];
+var testNumbers =[
+    {name: "four", num: 4},
+    {name: "three", num: 3},
+    {name: "ten", num: 10},
+    {name: "nine", num: 9}
+    ];
 
-function roots(num) {
-    return Math.sqrt(num);
-}
-
-var rootArray = arrayOfNumbers.map(roots);
+var squareTestNumbers = testNumbers.map(function(obj){
+    var eachObj = {};
+    eachObj["num"] = obj.num * obj.num;
+    eachObj["name"] = obj.name;
+    return eachObj;
+});
+    
 
 
 
