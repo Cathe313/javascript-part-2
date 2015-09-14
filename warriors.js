@@ -10,9 +10,9 @@ function makeWarrior (name, gender) {
         fight: function() {console.log(this.name + " rushes to the arena with " + this.weapon)},
         faceoff: function(opponent) {
             if (opponent.power > this.power) {
-                console.log(opponent.name + " won the fight. You're toast!");
+                console.log(opponent.name + " won the fight. " + this.name + " is toast!");
             }
-            if (opponent.power < this.power) {
+            else if (opponent.power < this.power) {
                 console.log(this.name + " won the fight! " + opponent.name + " is deader than dead!");
             } else { 
                 console.log("This fight is really boring...");
@@ -22,3 +22,18 @@ function makeWarrior (name, gender) {
     }
 }
    
+var bob = makeWarrior("Bob the Hammer", "M");
+var cat = makeWarrior("Cat Woman", "F");
+var glad = makeWarrior("Gladiator", "M");
+var pir = makeWarrior("Pirate!", "F");
+
+console.log(cat.power);
+console.log(glad.gender);
+console.log(bob.name);
+console.log(pir.weapon);
+
+cat.fight();
+bob.faceoff(pir);
+glad.faceoff(cat);
+pir.faceoff(glad);
+
