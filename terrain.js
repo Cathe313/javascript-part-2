@@ -5,14 +5,16 @@ function Tile(x, y) {
         this.x = x;
         this.y = y;
         this.height = Math.floor(3*Math.random());
-        //this.type = {
-            if (Math.floor(3*Math.random()) === 0) {this.type = "grass"};
-            if (Math.floor(3*Math.random()) === 1) {this.type = "rocks"};
-            if (Math.floor(3*Math.random()) === 2) {this.type = "water"};
-        //this.condition = 
-            if (Math.floor(3*Math.random()) === 0) {this.type = "burning"};
-            if (Math.floor(3*Math.random()) === 1) {this.type = "normal"};
-            if (Math.floor(3*Math.random()) === 2) {this.type = "frozen"};
+        //this.type
+            var randomType = (Math.floor(3*Math.random());
+            if (randomType === 0) {this.type = "grass"};
+            if (randomType === 1) {this.type = "rocks"};
+            if (randomType === 2) {this.type = "water"};
+        //this.condition 
+            var randomCondition = (Math.floor(3*Math.random());
+            if (randomCondition === 0) {this.condition = "burning"};
+            if (randomCondition === 1) {this.condition = "normal"};
+            if (randomCondition === 2) {this.condition = "frozen"};
 }
 
 Tile.prototype = {
