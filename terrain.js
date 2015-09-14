@@ -4,49 +4,18 @@
 function Tile(x, y) {
         this.x = x;
         this.y = y;
+        this.height = Math.floor(3*Math.random());
+        //this.type = {
+            if (Math.floor(3*Math.random()) === 0) {this.type = "grass"};
+            if (Math.floor(3*Math.random()) === 1) {this.type = "rocks"};
+            if (Math.floor(3*Math.random()) === 2) {this.type = "water"};
+        //this.condition = 
+            if (Math.floor(3*Math.random()) === 0) {this.type = "burning"};
+            if (Math.floor(3*Math.random()) === 1) {this.type = "normal"};
+            if (Math.floor(3*Math.random()) === 2) {this.type = "frozen"};
 }
 
-/*function tileHeight() {
-    switch ( (int)(3*Math.random()) ) {
-                case 0:
-                    var height = 1;
-                    break;
-                case 1:
-                    var height = 2;
-                    break;
-                case 2:
-                    var height = 3;
-                    break;   
-};*/
-
 Tile.prototype = {
-        height: tileHeight()
-        type: function() {
-            switch ( (int)(3*Math.random()) ) {
-                case 0:
-                    var type = "grass";
-                    break;
-                case 1:
-                    var type = "rocks";
-                    break;
-                case 2:
-                    var type = "water";
-                    break;
-            }
-        };    
-        condition: function() {
-            switch ( (int)(3*Math.random()) ) {
-                case 0:
-                    var type = "burning";
-                    break;
-                case 1:
-                    var type = "normal";
-                    break;
-                case 2:
-                    var type = "frozen";
-                    break;
-            }
-        }; 
        freeze: function() {
             if (this.condition === "burning") {
                 this.condition = "normal";
@@ -55,7 +24,7 @@ Tile.prototype = {
             } else {
                  this.height = this.height + 1;
             }
-       }; 
+       }, 
        burn: function() {
             if (this.condition === "frozen") {
                 this.condition = "normal";
@@ -63,6 +32,6 @@ Tile.prototype = {
                 this.condition === "burning";
             } else if (this.condition === "burning" && this.height > 0) {
                 this.height = this.height - 1;
-            } else continue;
-       };
+            }
+       }
 }    
