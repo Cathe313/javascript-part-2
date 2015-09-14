@@ -72,6 +72,30 @@ var squareTestNumbers = testNumbers.map(function(obj){
     return eachObj;
 });
     
+//This function takes a string called "operation" as argument and returns a function that will either add, subtract, multiply or divide two numbers.
+
+function operationMaker(operation) {
+    switch(operation) {
+        case "add":
+            return function adder(num1, num2){
+                return num1 + num2;
+            };
+        case "subtract":
+            return function subtracter(num1, num2) {
+                return num1 - num2;
+            };
+        case "mult":
+            return function multiplier(num1, num2) {
+                return num1 * num2;        
+                };
+        case "div":
+            return function divider(num1, num2) {
+                return num1 / num2;
+            };
+        default:
+            console.log ("I don't know this operation.");
+    }
+};
 
 
 
