@@ -55,3 +55,19 @@ function compareAlpha(a, b) {
 };
 
 addressBook.sort(compareAlpha);
+
+//Here is a function that can be used with Array.prototype.map() to return the square root of a number.
+
+var arrayOfNumbers = [100, 4, 9, 36, 1, 64, 0];
+
+function roots(num) {
+    return Math.sqrt(num);
+}
+
+var rootArray = arrayOfNumbers.map(roots);
+
+
+
+
+
+
