@@ -21,26 +21,20 @@ Tile.prototype = {
        freeze: function() {
             if (this.condition === "burning") {
                 this.condition = "normal";
-                return this.condition;
             } else if (this.condition === "normal") {
                  this.condition = "frozen";
-                return this.condition
             } else {
                  this.height = this.height + 1;
-                return this.height;
-            } return this.height;
+            } 
        }, 
        burn: function() {
             if (this.condition === "frozen") {
                 this.condition = "normal";
-                return this.condition;
             } else if (this.condition === "normal") {
                 this.condition = "burning";
-                return this.condition;
             } else if (this.condition === "burning" && this.height > 0) {
                 this.height = this.height - 1;
-                return this.height;
-            } return this.height;
+            } 
        }
 }    
  
@@ -50,3 +44,7 @@ var testTile = new Tile(3, 4);
 console.log(testTile.height);
 console.log(testTile.condition);
 testTile.burn();
+console.log(testTile.condition);
+
+var grid = [];
+var row1 = [];
