@@ -1,12 +1,14 @@
 //This is a random comment!
 
 function makeWarrior (name, gender) {
-    return {
-        name: name,
-        gender: gender,
+        this.name = name;
+        this.gender = gender;
+        this.power = Math.ceil(Math.random() * 100);
+}
+
+makeWarrior.prototype = {
         level: 1,
         weapon: "wooden sword",
-        power: Math.ceil(Math.random() * 100),
         fight: function() {console.log(this.name + " rushes to the arena with " + this.weapon)},
         faceoff: function(opponent) {
             if (opponent.power > this.power) {
@@ -18,14 +20,12 @@ function makeWarrior (name, gender) {
                 console.log("This fight is really boring...");
             }
         },
-            
-    }
 }
    
-var bob = makeWarrior("Bob the Hammer", "M");
-var cat = makeWarrior("Cat Woman", "F");
-var glad = makeWarrior("Gladiator", "M");
-var pir = makeWarrior("Pirate!", "F");
+var bob = new makeWarrior("Bob the Hammer", "M");
+var cat = new makeWarrior("Cat Woman", "F");
+var glad = new makeWarrior("Gladiator", "M");
+var pir = new makeWarrior("Pirate!", "F");
 
 console.log(cat.power);
 console.log(glad.gender);
