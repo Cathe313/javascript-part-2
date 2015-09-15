@@ -40,11 +40,26 @@ Tile.prototype = {
  
 //Testing with the following tile:
 
-var testTile = new Tile(3, 4);
-console.log(testTile.height);
-console.log(testTile.condition);
-testTile.burn();
-console.log(testTile.condition);
+//var testTile = new Tile(3, 4);
+//console.log(testTile.height);
+//console.log(testTile.condition);
+//testTile.burn();
+//console.log(testTile.condition);
 
-var grid = [];
-var row1 = [];
+function createGrid( x, y) {
+    var grid = [];
+    var aRow = [];
+    var aTile = [];
+    for (var i = 0; i < x; i ++ ){
+        aRow = [];
+        for (var j = 0; j < y; j ++ ) {
+            aTile = new Tile( (Math.floor ( Math.random()*10) ), (Math.floor ( Math.random()*10) ) );
+            aRow.push(aTile);
+        }
+        //console.log(aRow);
+        grid.push(aRow);
+    }
+    return grid;
+}
+
+var newGrid = createGrid (20, 20);
