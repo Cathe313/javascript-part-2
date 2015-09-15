@@ -66,10 +66,8 @@ var testNumbers =[
     ];
 
 var squareTestNumbers = testNumbers.map(function(obj){
-    var eachObj = {};
-    eachObj["num"] = obj.num * obj.num;
-    eachObj["name"] = obj.name;
-    return eachObj;
+    obj.num = obj.num * obj.num;
+    return obj;
 });
     
 //This function takes a string called "operation" as argument and returns a function that will either add, subtract, multiply or divide two numbers.
