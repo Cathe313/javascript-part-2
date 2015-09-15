@@ -1,5 +1,4 @@
-//Comment comment comment
-
+//My tile constructor:
 
 function Tile(x, y) {
         this.x = x;
@@ -37,29 +36,52 @@ Tile.prototype = {
             } 
        }
 }    
- 
-//Testing with the following tile:
 
-//var testTile = new Tile(3, 4);
-//console.log(testTile.height);
-//console.log(testTile.condition);
-//testTile.burn();
-//console.log(testTile.condition);
+//This function creates a new square grid of tiles:
 
-function createGrid( x, y) {
+function createGrid ( x ) {
     var grid = [];
     var aRow = [];
-    var aTile = [];
+    var aTile = {};
     for (var i = 0; i < x; i ++ ){
         aRow = [];
-        for (var j = 0; j < y; j ++ ) {
+        for (var j = 0; j < x; j ++ ) {
             aTile = new Tile( (Math.floor ( Math.random()*10) ), (Math.floor ( Math.random()*10) ) );
             aRow.push(aTile);
         }
-        //console.log(aRow);
         grid.push(aRow);
     }
     return grid;
 }
 
-var newGrid = createGrid (20, 20);
+//This function creates a visualisation of a grid, using its height property as an "icon":
+
+function heightMap(aGrid) {
+    var tileRow = "";
+    console.log(aGrid);
+    for (var i = 0; i < aGrid.length; i ++ ) {
+        tileRow = "";
+        for (var j = 0; j < aGrid.length; j ++ ){
+            tileRow += aGrid[i][j].height + " ";
+        }
+    console.log(tileRow);    
+    }
+}
+
+
+
+var newGrid = createGrid (20);
+heightMap(newGrid);
+
+newGrid[4][7].burn();
+newGrid[13][19].freeze();
+newGrid[9][19].burn();
+newGrid[18][6].burn();
+newGrid[12][9].freeze();
+newGrid[2][11].burn();
+newGrid[1][17].freeze();
+newGrid[19][8].burn();
+newGrid[16][13].burn();
+newGrid[7][8].freeze();
+
+heightMap(newGrid);
