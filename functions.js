@@ -56,7 +56,8 @@ function compareAlpha(a, b) {
 
 addressBook.sort(compareAlpha);
 
-//Here is a function that can be used on an array of objects with Array.prototype.map() to return the square of the num property (with a test array).
+//Here is a function that can be used on an array of objects with Array.prototype.map() to return the 
+//square of the num property (with a test array).
 
 var testNumbers =[
     {name: "four", num: 4},
@@ -66,8 +67,10 @@ var testNumbers =[
     ];
 
 var squareTestNumbers = testNumbers.map(function(obj){
-    obj.num = obj.num * obj.num;
-    return obj;
+    var eachObj = Object.create(obj);
+    eachObj = obj;
+    eachObj["num"] = obj.num * obj.num;
+    return eachObj;
 });
     
 //This function takes a string called "operation" as argument and returns a function that will either add, subtract, multiply or divide two numbers.
