@@ -4,11 +4,11 @@ function makeWarrior (name, gender) {
         this.name = name;
         this.gender = gender;
         this.power = Math.ceil(Math.random() * 100);
+        this.power = 1;
+        this.weapon = "wooden sword";
 }
 
 makeWarrior.prototype = {
-        level: 1,
-        weapon: "wooden sword",
         fight: function() {console.log(this.name + " rushes to the arena with " + this.weapon)},
         faceoff: function(opponent) {
             if (opponent.power > this.power) {
